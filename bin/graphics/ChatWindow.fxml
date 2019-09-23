@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #ffcc99;" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphics.ChatWindowController">
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
+         <children>
+            <ListView fx:id="chatHeadList" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#selectChat" prefHeight="391.0" prefWidth="235.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Label alignment="CENTER" prefHeight="45.0" prefWidth="229.0" text="GGS_share chat" textAlignment="CENTER" textFill="#afbf56" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="DejaVu Serif Bold" size="25.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="activeChat" minWidth="-Infinity" prefHeight="414.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+            <HBox prefHeight="35.0" prefWidth="240.0" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <TextArea fx:id="message" prefHeight="200.0" prefWidth="200.0" promptText="New message" wrapText="true" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#sendMessage" prefHeight="40.0" prefWidth="58.0">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Icons/send.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
